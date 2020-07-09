@@ -21,6 +21,7 @@
             >
 
             <RelativeLayout
+                android:id="@+id/relative"
                 android:layout_weight="1
 "
                 android:layout_width="40dp"
@@ -51,6 +52,7 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:id="@+id/re2"
                 android:layout_weight="1
 "
                 android:layout_width="40dp"
