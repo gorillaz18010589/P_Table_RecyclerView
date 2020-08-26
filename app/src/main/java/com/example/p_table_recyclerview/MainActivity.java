@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         tests = new ArrayList<>();
         Test test = new Test("123","1234","12345","1","222","123456","123");
-        for(int i=0; i<50; i++){
+        for(int i=0; i<10; i++){
             tests.add(test);
         }
 

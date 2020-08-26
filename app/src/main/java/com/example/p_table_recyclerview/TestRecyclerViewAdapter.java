@@ -27,22 +27,33 @@ public class TestRecyclerViewAdapter extends RecyclerView.Adapter<TestRecyclerVi
     @NonNull
     @Override
     public TestViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vip_item_tabale_flow,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vip_item_tabale_flow, parent, false);
         TestViewHolder testViewHolder = new TestViewHolder(view);
         return testViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull TestViewHolder holder, int position) {
+        Log.v("hank", "onBindViewHolder ->" + tests.size() + "/" + position);
         int newPosition = position % 2;
-        if(newPosition == 0) {
-            holder.tv1.setText("幹你娘");
+        if (newPosition == 0) {
+            //0
+            holder.tv1.setText("隨便");
             holder.relative.setBackground(mContext.getResources().getDrawable(R.drawable.vip_change_bg));
             holder.re2.setBackground(mContext.getResources().getDrawable(R.drawable.vip_change_bg));
-            Log.v("hank","0:" + newPosition);
-        }else {
-            holder.itemView.setBackgroundColor(Color.BLUE);
-            Log.v("hank","1:" + newPosition);
+            Log.v("hank", "0:" + newPosition);
+        } else if (newPosition == 1) {
+            if (tests.size() == position + 1) {
+                //最後
+//                holder.relative.setBackground(mContext.getResources().getDrawable(R.drawable.vip_change_bg));
+                holder.relative.setBackgroundColor(Color.RED);
+                Log.v("hank", "最後:" + position);
+            } else {
+                //1
+                holder.relative.setBackgroundColor(Color.BLUE);
+                Log.v("hank", "1:" + newPosition);
+            }
+
 
         }
         Log.v("hank","newPostion:" + newPosition);
